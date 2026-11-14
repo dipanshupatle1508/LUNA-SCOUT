@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Featured Tool: Eyes on the Moon</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #17171b;
+    --muted: #58585b;
+    --accent: #0b3d91;
+    --frame-bg: #000000;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17171b;
+      --text: #f7f5f4;
+      --muted: #b9b9bb;
+      --accent: #7fb0ff;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .featured-tool {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .featured-tool h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    letter-spacing: -0.02em;
+  }
+  .featured-tool p {
+    margin: 0 0 20px;
+    color: var(--muted);
+  }
+  .embed-frame {
+    position: relative;
+    width: 100%;
+    height: 618px;          /* same height NASA uses on desktop */
+    max-height: 80vh;
+    background: var(--frame-bg);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .embed-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .embed-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .embed-link:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .embed-frame { height: 70vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Copy from here into your prototype ===== -->
+<section class="featured-tool" aria-labelledby="eyes-heading">
+  <h2 id="eyes-heading">Featured Tool: Eyes on the Moon</h2>
+  <p>Fly through the solar system to the Moon in this 3D visualization from NASA.</p>
+
+  <div class="embed-frame">
+    <iframe
+      src="https://eyes.nasa.gov/apps/solar-system/#/earth/moons/moon?layerPlanets=hide&layerSpacecraft=hide&layerOrbits=hide&layerTrails=hide&layerDwarfPlanets=hide&layerAsteroids=hide&layerComets=hide"
+      title="NASA Eyes on the Solar System - Moon"
+      loading="lazy"
+      allow="fullscreen"
+      allowfullscreen>
+      Unable to render the provided source
+    </iframe>
+  </div>
+
+  <a class="embed-link" href="https://eyes.nasa.gov/apps/solar-system/#/earth/moons/moon" target="_blank" rel="noopener">
+    Open Eyes on the Moon in a new tab &rarr;
+  </a>
+</section>
+<!-- ===== Copy to here ===== -->
+
+</body>
+</html>
