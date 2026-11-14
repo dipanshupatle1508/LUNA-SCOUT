@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lunar Landing Site Navigator</title>
+<style>
+:root{color-scheme:dark;--bg:#000;--panel:rgba(8,10,14,.74);--line:rgba(255,255,255,.14);--fg:#e3e9f0;--dim:#8a96a6;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171;--cy:#38bdf8}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;font:12px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg)}
+canvas#c{position:fixed;inset:0;width:100%;height:100%;display:block}
+.p{position:fixed;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;backdrop-filter:blur(6px)}
+#info{top:max(10px,env(safe-area-inset-top));left:10px;width:270px}
+#spots{top:max(10px,env(safe-area-inset-top));right:10px;width:250px}
+#radar{right:10px;bottom:max(10px,env(safe-area-inset-bottom));padding:6px}
+#tip{left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);text-align:center;color:var(--dim)}
+h1{font-size:13px;margin:0 0 6px;letter-spacing:.04em}
+select,button{font:inherit;color:var(--fg);background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:6px;padding:4px 7px;cursor:pointer}
+select{width:100%;margin-bottom:6px}button:hover{background:rgba(255,255,255,.16)}button.on{border-color:var(--cy);color:var(--cy)}
+.row{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}.k{color:var(--dim)}.g{color:var(--ok)}.w{color:var(--warn)}.b{color:var(--bad)}
+.s{display:flex;justify-content:space-between;gap:6px;padding:3px 0;border-top:1px solid var(--line)}
+#start{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.78);z-index:9}
+#start div{max-width:440px;text-align:center;padding:24px}#start h2{margin:0 0 8px;font-size:22px}
+#start button{font-size:15px;padding:10px 22px;margin-top:14px;border-color:var(--cy);color:var(--cy)}
+#toast{position:fixed;top:18%;left:50%;transform:translateX(-50%);font-size:15px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 16px;opacity:0;transition:opacity .4s;pointer-events:none}
+#cross{position:fixed;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:rgba(255,255,255,.55)}
+</style></head><body>
+<canvas id="c"></canvas><div id="cross"></div><div id="toast"></div>
+<div class="p" id="info"><h1>🌕 LUNAR LANDING NAVIGATOR</h1>
+<select id="site"></select>
+<div class="row"><button data-s="1" class="on">LIVE</button><button data-s="600">×600</button><button data-s="36000">×36k</button><button id="noon">☀ Noon</button><button id="night">🌙 Night</button></div>
+<div id="data"></div></div>
+<div class="p" id="spots"><h1>LANDING ZONES · <span id="sc">0</span> pts · <span id="cn">0</span>/3</h1><div id="list" class="k">Press F to scan the terrain.</div></div>
+<div class="p" id="radar"><canvas id="rd" width="150" height="150"></canvas></div>
+<div class="p" id="tip">WASD move · Shift run · Space jump · Mouse look · <b>F</b> scan · <b>E</b> certify a zone</div>
+<div id="start"><div><h2>Lunar Landing Site Navigator</h2><p class="k">Walk the lunar surface and find flat, safe landing zones. The Sun and Earth sit where they really are in the lunar sky right now (approximate model), and each zone is checked against the local horizon for sunlight and a direct line to Earth.</p><p>Certify 3 safe zones to complete the mission.</p><button id="go">Start walking</button></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=i=>document.getElementById(i),D2R=Math.PI/180,DAY=864e5,PER=29.530588853,REF=947182440000;
+const SITES=[{n:"Shackleton Rim (South Pole)",lat:-89.7,lon:130,r:1.3},{n:"Malapert Mountain",lat:-85.9,lon:2.9,r:1.1},{n:"Tranquility Base",lat:0.674,lon:23.473,r:.4},{n:"Apollo 17 – Taurus-Littrow",lat:20.19,lon:30.77,r:.7},{n:"Tycho Crater",lat:-43.3,lon:-11.36,r:1.2}];
+SITES.forEach((s,i)=>$("site").add(new Option(s.n,i)));
+/* ---------- astronomy (simplified, Moon-fixed frame) ---------- */
+function ast(ms){const d=(ms-REF)/DAY,ph=((d/PER)%1+1)%1,ls=(180-360*ph)*D2R,ds=1.54*D2R*Math.sin(2*Math.PI*d/346.62),b=6.7*D2R*Math.sin(2*Math.PI*d/27.2122),l=7.6*D2R*Math.sin(2*Math.PI*d/27.5546);
+return{S:[Math.cos(ds)*Math.cos(ls),Math.cos(ds)*Math.sin(ls),Math.sin(ds)],E:[Math.cos(b)*Math.cos(l),Math.cos(b)*Math.sin(l),Math.sin(b)]}}
+function frame(lat,lon){const a=lat*D2R,o=lon*D2R;return{up:[Math.cos(a)*Math.cos(o),Math.cos(a)*Math.sin(o),Math.sin(a)],ea:[-Math.sin(o),Math.cos(o),0],no:[-Math.sin(a)*Math.cos(o),-Math.sin(a)*Math.sin(o),Math.cos(a)]}}
+const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
+function loc(F,V){const e=dot(V,F.ea),u=dot(V,F.up),n=dot(V,F.no);return{v:new THREE.Vector3(e,u,-n),el:Math.asin(Math.max(-1,Math.min(1,u)))/D2R,az:(Math.atan2(e,n)/D2R+360)%360}}
+/* ---------- noise ---------- */
+const hs=(i,j,s)=>{const n=Math.sin(i*127.1+j*311.7+s*74.7)*43758.5453;return n-Math.floor(n)};
+function vn(x,y,s){const i=Math.floor(x),j=Math.floor(y),fx=x-i,fy=y-j,u=fx*fx*(3-2*fx),v=fy*fy*(3-2*fy),L=(a,b,t)=>a+(b-a)*t;return L(L(hs(i,j,s),hs(i+1,j,s),u),L(hs(i,j+1,s),hs(i+1,j+1,s),u),v)}
+function fbm(x,y,s){let v=0,a=.5,f=1;for(let o=0;o<4;o++){v+=a*vn(x*f,y*f,s);f*=2;a*=.5}return v/.94}
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+/* ---------- three.js setup ---------- */
+const R=new THREE.WebGLRenderer({canvas:$("c"),antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.toneMapping=THREE.ACESFilmicToneMapping;R.outputEncoding=THREE.sRGBEncoding;
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(70,1,.3,8000);cam.rotation.order="YXZ";
+function resize(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}addEventListener("resize",resize);resize();
+const sunL=new THREE.DirectionalLight(0xffffff,3.4);sunL.castShadow=true;sunL.shadow.mapSize.set(2048,2048);const sc=sunL.shadow.camera;sc.left=sc.bottom=-70;sc.right=sc.top=70;sc.near=1;sc.far=700;sunL.shadow.bias=-.0004;sunL.shadow.normalBias=.4;scene.add(sunL,sunL.target);
+const eL=new THREE.DirectionalLight(0x7fa0ff,0);scene.add(eL,new THREE.AmbientLight(0x1a1c22,.5));
+const tex=(()=>{const c=document.createElement("canvas");c.width=c.height=256;const g=c.getContext("2d"),im=g.createImageData(256,256);for(let i=0;i<65536;i++){const v=150+(Math.random()-.5)*70+(Math.random()<.012?-60:0);im.data.set([v,v,v,255],i*4)}g.putImageData(im,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=8;return t})();
+const farT=tex.clone();farT.needsUpdate=true;farT.repeat.set(900,900);
+const far=new THREE.Mesh(new THREE.CircleGeometry(6000,48),new THREE.MeshStandardMaterial({color:0x6e6d69,map:farT,roughness:1}));far.rotation.x=-Math.PI/2;far.position.y=-.05;far.receiveShadow=true;scene.add(far);
+/* sky: stars, sun, earth */
+const sp=[];for(let i=0;i<2800;i++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u),m=2500;sp.push(m*r*Math.cos(t),m*u,m*r*Math.sin(t))}
+const sg=new THREE.BufferGeometry();sg.setAttribute("position",new THREE.Float32BufferAttribute(sp,3));const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xffffff,size:1.6,sizeAttenuation:false,fog:false}));stars.frustumCulled=false;scene.add(stars);
+const sunM=new THREE.Mesh(new THREE.SphereGeometry(5.6,24,16),new THREE.MeshBasicMaterial({color:0xfffbe8}));
+const glow=(()=>{const c=document.createElement("canvas");c.width=c.height=128;const g=c.getContext("2d"),r=g.createRadialGradient(64,64,0,64,64,64);r.addColorStop(0,"rgba(255,248,220,1)");r.addColorStop(.12,"rgba(255,240,200,.55)");r.addColorStop(1,"rgba(255,230,180,0)");g.fillStyle=r;g.fillRect(0,0,128,128);const s=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),blending:THREE.AdditiveBlending,depthWrite:false}));s.scale.set(150,150,1);return s})();
+const eTex=(()=>{const W=256,H=128,c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d"),im=g.createImageData(W,H);for(let y=0;y<H;y++)for(let x=0;x<W;x++){const a=x/W*6.283,b=(y/H-.5)*3.1416,cb=Math.cos(b),X=Math.cos(a)*cb*3,Y=Math.sin(a)*cb*3,Z=Math.sin(b)*3,n=fbm(X+Z*1.7+9,Y+Z*.9+4,5),cl=fbm(X*1.6+Z+3,Y*1.6-Z+8,11);let r=18,gg=62,bl=140;if(n>.55){const t=Math.min(1,(n-.55)*5);r=60+90*t;gg=110+20*t;bl=50+30*t}if(Math.abs(b)>1.25){r=gg=bl=235}const k=Math.max(0,(cl-.5)*3);r+=(245-r)*Math.min(1,k);gg+=(245-gg)*Math.min(1,k);bl+=(248-bl)*Math.min(1,k);im.data.set([r,gg,bl,255],(y*W+x)*4)}g.putImageData(im,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=THREE.RepeatWrapping;return t})();
+const eMat=new THREE.ShaderMaterial({uniforms:{map:{value:eTex},uSun:{value:new THREE.Vector3(1,0,0)},uRot:{value:0}},
+vertexShader:"varying vec3 vN;varying vec2 vU;varying vec3 vW;void main(){vN=normalize(mat3(modelMatrix)*normal);vU=uv;vW=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(vW,1.);}",
+fragmentShader:"uniform sampler2D map;uniform vec3 uSun;uniform float uRot;varying vec3 vN;varying vec2 vU;varying vec3 vW;void main(){vec3 n=normalize(vN);float d=max(dot(n,uSun),0.);vec3 c=texture2D(map,vec2(vU.x+uRot,vU.y)).rgb;c=pow(c,vec3(2.2));float rim=pow(1.-max(dot(n,normalize(cameraPosition-vW)),0.),3.);vec3 col=c*(d*1.25+.012)+vec3(.25,.5,1.)*rim*.45*smoothstep(-.1,.5,d);gl_FragColor=vec4(pow(col,vec3(1./2.2)),1.);}"});
+const earthM=new THREE.Mesh(new THREE.SphereGeometry(20,48,32),eMat);
+scene.add(sunM,glow,earthM);
+/* ---------- terrain / site ---------- */
+let T={},F,SUN,EARTH,spots=[],rocks,terr,px=0,pz=0,py=0,vx=0,vz=0,vy=0,yaw=0,pitch=0,simMs=Date.now(),speed=1,score=0,cert=0,site=0;
+const lg=new THREE.Group(),landers=[];scene.add(lg);
+function buildSite(i){site=i;const S=SITES[i],s=i*17+3,rr=rng(s),r=S.r;F=frame(S.lat,S.lon);
+ if(terr){scene.remove(terr,rocks);terr.geometry.dispose()}lg.clear();landers.length=0;spots=[];score=cert=0;
+ const cr=[];for(let k=0;k<46;k++){const R_=6+Math.pow(rr(),2)*42;cr.push([(rr()-.5)*340,(rr()-.5)*340,R_,R_*(.1+.08*r)])}
+ const edge=(x,z)=>{const m=Math.max(Math.abs(x),Math.abs(z)),t=Math.min(1,Math.max(0,(m-125)/50));return 1-t*t*(3-2*t)};
+ T.h=(x,z)=>{let y=(fbm(x*.008,z*.008,s)-.5)*14*r+(fbm(x*.04,z*.04,s+1)-.5)*3*r+(fbm(x*.3,z*.3,s+2)-.5)*.35;for(const c of cr){const q=Math.hypot(x-c[0],z-c[1])/c[2];if(q<2.6){if(q<1)y-=c[3]*(1-q*q);y+=c[3]*.3*Math.exp(-((q-1)/.3)**2)}}return y*edge(x,z)};
+ const g=new THREE.PlaneGeometry(360,360,240,240);g.rotateX(-Math.PI/2);const P=g.attributes.position;for(let k=0;k<P.count;k++)P.setY(k,T.h(P.getX(k),P.getZ(k)));g.computeVertexNormals();
+ const N=g.attributes.normal,col=new Float32Array(P.count*3);for(let k=0;k<P.count;k++){let c=.52+(fbm(P.getX(k)*.07,P.getZ(k)*.07,s+3)-.5)*.3;c*=.6+.4*Math.pow(N.getY(k),6);col.set([c,c*.98,c*.94],k*3)}g.setAttribute("color",new THREE.BufferAttribute(col,3));
+ const tt=tex.clone();tt.needsUpdate=true;tt.repeat.set(120,120);terr=new THREE.Mesh(g,new THREE.MeshStandardMaterial({vertexColors:true,map:tt,roughness:1}));terr.receiveShadow=true;scene.add(terr);
+ rocks=new THREE.InstancedMesh(new THREE.DodecahedronGeometry(1,0),new THREE.MeshStandardMaterial({color:0x77746e,roughness:1,flatShading:true}),800);const m=new THREE.Matrix4(),q=new THREE.Quaternion(),e=new THREE.Euler();
+ for(let k=0;k<800;k++){const x=(rr()-.5)*300,z=(rr()-.5)*300,sz=.12+Math.pow(rr(),4)*1.6;e.set(rr()*6,rr()*6,rr()*6);q.setFromEuler(e);m.compose(new THREE.Vector3(x,T.h(x,z)+sz*.25,z),q,new THREE.Vector3(sz*(.8+rr()*.6),sz*(.5+rr()*.4),sz*(.8+rr()*.6)));rocks.setMatrixAt(k,m)}
+ rocks.castShadow=rocks.receiveShadow=true;scene.add(rocks);
+ for(let x=-150;x<=150;x+=20)for(let z=-150;z<=150;z+=20){const X=x+(rr()-.5)*8,Z=z+(rr()-.5)*8,h0=T.h(X,Z);let mx=0;for(let k=0;k<8;k++){const a=k*Math.PI/4;mx=Math.max(mx,Math.abs(T.h(X+Math.cos(a)*7,Z+Math.sin(a)*7)-h0))}const sl=Math.atan(mx/7)/D2R;if(sl<7)spots.push({id:spots.length+1,x:X,z:Z,y:h0,sl,rev:false,cert:false,sunOk:false,earthOk:false,sc:0})}
+ px=pz=0;vx=vz=vy=0;updSky();yaw=-EARTH.az*D2R;pitch=Math.max(0,Math.min(.5,EARTH.el*D2R));if(SUN.el<0)toast("Lunar night here – press ☀ Noon for daylight");
+ $("sc").textContent=0;$("cn").textContent=0;$("list").innerHTML="Press F to scan the terrain."}
+function horiz(x,z,az,y0){const dx=Math.sin(az*D2R),dz=-Math.cos(az*D2R);let m=-90;for(let s=6;s<=300;s+=6)m=Math.max(m,Math.atan2(T.h(x+dx*s,z+dz*s)-y0-3,s)/D2R);return m}
+function updSpots(){for(const p of spots){if(!p.rev)continue;p.sunOk=SUN.el>Math.max(-.27,horiz(p.x,p.z,SUN.az,p.y)-.27)&&SUN.el>-.27;p.earthOk=EARTH.el>horiz(p.x,p.z,EARTH.az,p.y);p.sc=Math.round(60*Math.max(0,1-p.sl/7)+(p.sunOk?20:0)+(p.earthOk?20:0))}}
+function updSky(){const A=ast(simMs);SUN=loc(F,A.S);EARTH=loc(F,A.E);window.EF=(1-dot(A.S,A.E))/2}
+/* beacons / landers */
+const bg=new THREE.CylinderGeometry(.2,.2,30,8),rg=new THREE.RingGeometry(5.5,6,40).rotateX(-Math.PI/2);
+function beacon(p){const c=p.sl<5?0x4ade80:0xfbbf24,g=new THREE.Group(),mt=()=>new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.5,depthWrite:false});const b=new THREE.Mesh(bg,mt());b.position.y=15;const r=new THREE.Mesh(rg,mt());r.position.y=.2;g.add(b,r);g.position.set(p.x,p.y,p.z);lg.add(g);p.bm=g}
+function lander(p){const g=new THREE.Group(),mt=new THREE.MeshStandardMaterial({color:0xd8d2c0,metalness:.6,roughness:.4}),b=new THREE.Mesh(new THREE.CylinderGeometry(1.3,1.6,1.6,8),mt);b.position.y=2;const t=new THREE.Mesh(new THREE.ConeGeometry(1,1.4,8),mt);t.position.y=3.5;g.add(b,t);for(let k=0;k<4;k++){const l=new THREE.Mesh(new THREE.CylinderGeometry(.07,.07,2.6,5),mt),a=k*Math.PI/2+.78;l.position.set(Math.cos(a)*1.6,1,Math.sin(a)*1.6);l.rotation.set(Math.sin(a)*.5,0,-Math.cos(a)*.5);g.add(l)}g.traverse(o=>o.castShadow=true);g.position.set(p.x,p.y+45,p.z);lg.add(g);landers.push({g,y:p.y,t:0})}
+/* ---------- input ---------- */
+const K={};addEventListener("keydown",e=>{K[e.code]=1;if(e.code==="KeyF")scan();if(e.code==="KeyE")certify();if(["Space","ArrowUp","ArrowDown"].includes(e.code))e.preventDefault()});addEventListener("keyup",e=>K[e.code]=0);
+let drag=false;$("c").addEventListener("pointerdown",()=>{drag=true;try{$("c").requestPointerLock()}catch(_){}});addEventListener("pointerup",()=>drag=false);
+addEventListener("mousemove",e=>{if(document.pointerLockElement||drag){yaw-=e.movementX*.0022;pitch=Math.max(-1.5,Math.min(1.5,pitch-e.movementY*.0022))}});
+$("go").onclick=()=>{$("start").style.display="none";try{$("c").requestPointerLock()}catch(_){}};
+$("site").onchange=e=>{buildSite(+e.target.value);e.target.blur()};
+document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{speed=+b.dataset.s;if(speed===1)simMs=Date.now();document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x===b));b.blur()});
+function noon(off){const d=(simMs-REF)/DAY,ph=((180-SITES[site].lon)/360%1+1)%1;simMs=REF+(Math.round(d/PER-ph)+ph+off)*PER*DAY}
+$("noon").onclick=e=>{noon(0);e.target.blur()};$("night").onclick=e=>{noon(.5);e.target.blur()};
+let tt0=0;function toast(t){const e=$("toast");e.textContent=t;e.style.opacity=1;clearTimeout(tt0);tt0=setTimeout(()=>e.style.opacity=0,2600)}
+let scanT=-9,scanR=0;const ring=new THREE.Mesh(new THREE.RingGeometry(.97,1,96).rotateX(-Math.PI/2),new THREE.MeshBasicMaterial({color:0x38bdf8,transparent:true,depthWrite:false}));ring.visible=false;scene.add(ring);
+function scan(){if(performance.now()/1000-scanT<1.5)return;scanT=performance.now()/1000;scanR=0;ring.visible=true;toast("Scanning terrain…")}
+function certify(){let best=null,bd=10;for(const p of spots){if(!p.rev)continue;const d=Math.hypot(p.x-px,p.z-pz);if(d<bd){bd=d;best=p}}
+ if(!best)return toast("Walk closer to a scanned zone (within 10 m)");if(best.cert)return;if(best.sl>=5)return toast("Too steep – slope "+best.sl.toFixed(1)+"° (needs < 5°)");if(!best.earthOk)return toast("No direct Earth link from this spot");
+ best.cert=true;cert++;score+=best.sc;lg.remove(best.bm);beacon(best);best.bm.children.forEach(c=>c.material.color.set(0x38bdf8));lander(best);$("sc").textContent=score;$("cn").textContent=cert;toast(cert>=3?"🚀 Mission complete! "+score+" points":"Zone #"+best.id+" certified +"+best.sc)}
+/* ---------- loop ---------- */
+let last=performance.now(),hudT=0,spT=0;const rd=$("rd").getContext("2d");
+function frameLoop(now){requestAnimationFrame(frameLoop);const dt=Math.min(.05,(now-last)/1000);last=now;if(!T.h)return;simMs+=dt*1000*speed;
+ const fw=(K.KeyW||K.ArrowUp?1:0)-(K.KeyS||K.ArrowDown?1:0),st=(K.KeyD||K.ArrowRight?1:0)-(K.KeyA||K.ArrowLeft?1:0),sp_=K.ShiftLeft||K.ShiftRight?9:3.5;
+ vx+=((-Math.sin(yaw)*fw+Math.cos(yaw)*st)*sp_-vx)*Math.min(1,dt*4);vz+=((-Math.cos(yaw)*fw-Math.sin(yaw)*st)*sp_-vz)*Math.min(1,dt*4);
+ px=Math.max(-150,Math.min(150,px+vx*dt));pz=Math.max(-150,Math.min(150,pz+vz*dt));const gy=T.h(px,pz);if(py<=gy+.01&&K.Space)vy=3.6;vy-=1.62*dt;py+=vy*dt;if(py<gy){py=gy;vy=0}
+ cam.position.set(px,py+1.7,pz);cam.rotation.set(pitch,yaw,0);
+ updSky();const D=1200,cp=cam.position;sunM.position.copy(cp).addScaledVector(SUN.v,D);glow.position.copy(sunM.position);earthM.position.copy(cp).addScaledVector(EARTH.v,D);stars.position.copy(cp);far.position.x=cp.x;far.position.z=cp.z;
+ eMat.uniforms.uSun.value.copy(SUN.v);eMat.uniforms.uRot.value=(simMs/DAY)%1;
+ sunL.intensity=3.4*Math.max(0,Math.min(1,(SUN.el+.4)/2));sunL.position.set(px,py,pz).addScaledVector(SUN.v,300);sunL.target.position.set(px,py,pz);
+ eL.intensity=.5*EF*Math.max(0,Math.min(1,(EARTH.el+2)/6));eL.position.copy(cp).addScaledVector(EARTH.v,100);
+ if(ring.visible){const t=performance.now()/1000-scanT;scanR=t*85;ring.position.set(px,T.h(px,pz)+.3,pz);ring.scale.set(scanR,1,scanR);ring.material.opacity=Math.max(0,1-t/1.4);for(const p of spots)if(!p.rev&&Math.hypot(p.x-px,p.z-pz)<scanR){p.rev=true;beacon(p)}if(t>1.4)ring.visible=false}
+ for(const l of landers){l.t=Math.min(1,l.t+dt/4);const e=1-Math.pow(1-l.t,3);l.g.position.y=l.y+45*(1-e)}
+ for(const p of spots)if(p.bm&&!p.cert){const c=p.sl<5&&p.earthOk?0x4ade80:p.sl<5?0xfbbf24:0xf87171;p.bm.children.forEach(o=>o.material.color.set(c))}
+ if((spT+=dt)>.4){spT=0;updSpots()}
+ if((hudT+=dt)>.25){hudT=0;hud()}drawRadar();R.render(scene,cam)}
+function cls(ok){return ok?"g":"b"}
+function hud(){const d=new Date(simMs),hd=((-yaw/D2R)%360+360)%360,A=SITES[site],lit=SUN.el>-.27;
+ $("data").innerHTML=`<div class="k">${d.toISOString().slice(0,16).replace("T"," ")} UTC · ${speed===1?"live":"×"+speed}</div>
+ <div class="s"><span>☀ Sun</span><span class="${lit?"g":"b"}">el ${SUN.el.toFixed(1)}° · az ${SUN.az.toFixed(0)}°</span></div>
+ <div class="s"><span>🌍 Earth</span><span class="${EARTH.el>0?"g":"b"}">el ${EARTH.el.toFixed(1)}° · az ${EARTH.az.toFixed(0)}°</span></div>
+ <div class="s"><span>Earth phase</span><span>${Math.round(EF*100)}% lit</span></div>
+ <div class="s"><span>Heading</span><span>${hd.toFixed(0)}°</span></div>
+ <div class="s"><span>Position</span><span>${A.lat.toFixed(2)}°, ${A.lon.toFixed(2)}° (+${px.toFixed(0)}E ${(-pz).toFixed(0)}N m)</span></div>`;
+ const L=spots.filter(p=>p.rev).map(p=>({p,d:Math.hypot(p.x-px,p.z-pz)})).sort((a,b)=>a.d-b.d).slice(0,6);
+ if(L.length)$("list").innerHTML=L.map(({p,d})=>`<div class="s"><span>#${p.id} ${p.cert?"✔":""} ${d.toFixed(0)} m · ${p.sl.toFixed(1)}°</span><span><span class="${cls(p.sunOk)}">☀</span> <span class="${cls(p.earthOk)}">🌍</span> <b class="${p.sc>=80?"g":p.sc>=50?"w":"b"}">${p.sc}</b></span></div>`).join("")}
+function drawRadar(){rd.clearRect(0,0,150,150);rd.strokeStyle="rgba(255,255,255,.2)";for(const r of[25,50,70]){rd.beginPath();rd.arc(75,75,r,0,6.283);rd.stroke()}
+ const fx=-Math.sin(yaw),fz=-Math.cos(yaw),rx=Math.cos(yaw),rz=-Math.sin(yaw);for(const p of spots){if(!p.rev)continue;const dx=p.x-px,dz=p.z-pz,X=(dx*rx+dz*rz)*.47,Y=-(dx*fx+dz*fz)*.47;if(Math.hypot(X,Y)>70)continue;rd.fillStyle=p.cert?"#38bdf8":p.sl<5?"#4ade80":"#fbbf24";rd.beginPath();rd.arc(75+X,75+Y,4,0,6.283);rd.fill()}
+ rd.fillStyle="#fff";rd.beginPath();rd.moveTo(75,68);rd.lineTo(70,80);rd.lineTo(80,80);rd.fill();rd.fillStyle="#8a96a6";rd.fillText("N",70,12)}
+buildSite(0);requestAnimationFrame(frameLoop);
+</script></body></html>
