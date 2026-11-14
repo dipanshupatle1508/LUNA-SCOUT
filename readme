@@ -1,8 +1,32 @@
-What does your project do?
-LUNA SCOUT visualizes Sun and Earth positions across candidate lunar south pole landing sites, calculating solar power generation windows and direct-to-Earth communications against real lunar terrain.
+LUNA SCOUT: Lunar South Pole Mission Planning & Horizon Analysis System
+1. Problem Statement & Background
 
-How does it work?
-Using NASA SPICE ephemerides and LOLA topographical elevation data, the system models the Sun and Earth's azimuth and elevation relative to the local horizon. A WebGL 3D engine allows users to explore the Moon globally or step down to the surface, accompanied by comparative timeline heatmaps and mission readiness scoring.
+The lunar south pole is the focal point of NASA’s Artemis campaign and future lunar base architecture due to permanently shadowed craters containing water-ice deposits. However, surface survival depends entirely on two critical, competing constraints:
 
-NASA Data & Resources Used:
-NASA JPL NAIF SPICE Ephemeris Kernels (DE440, PCK, FK), Lunar Reconnaissance Orbiter (LRO) LOLA Elevation Data via NASA PDS, NASA Eyes on the Solar System, and NASA Artemis Candidate Region specifications.
+Solar Power: The Sun circles near the horizon (within ~1.5°), making local topographical ridges and crater rims decisive in whether a lander or rover receives sunlight or freezes in shadow.
+Direct-to-Earth (DTE) Telemetry: Earth wobbles low along the horizon over a 27.3-day libration cycle. When Earth sinks behind crater elevations, surface assets lose direct line-of-sight communication.
+
+Legacy ephemeris and trajectory planning tools are built for dedicated astrodynamics specialists, requiring high barrier-to-entry command-line or monolithic software interfaces that make rapid cross-site evaluation tedious and inefficient.
+
+2. Our Solution
+
+LUNA SCOUT bridges scientific precision and high-performance user experience. It delivers a fast, client-side web application capable of:
+
+Interactive 3D Orbital Exploration: Rotating and inspecting the Moon with candidate Artemis landing zones clearly mapped with real lunar coordinates and procedural elevation textures.
+First-Person Ground / Surface Horizon View: A smooth camera dive from orbit directly onto the landing site, showing where the Sun and Earth appear relative to realistic horizon masks and azimuth/elevation polar plots.
+Multi-Site Comparative Decision Engine: Rapid side-by-side assessment across 6 candidate regions (Shackleton Rim, Malapert Massif, Connecting Ridge, Peak Near Shackleton, Haworth Plains, and Nobile Rim) with custom weighted mission feasibility scoring.
+Power & Telemetry Timeline Heatmaps: High-density timeline matrices revealing combined power-comms availability, solar-only survival windows, and critical blackout periods.
+3. NASA Data Sources & Scientific Pipeline
+
+Our calculations and modeling rely strictly on authentic NASA datasets:
+
+JPL NAIF SPICE Planetary Ephemerides (de440.bsp): High-precision positions of the Sun and Earth.
+Lunar Frame & Orientation Kernels (moon_pa_de440, moon_080317.tf): Coordinate transformations into Moon-fixed Principal Axis (PA) and Mean Earth (ME) frames.
+NASA PDS Geosciences LOLA DEMs: Topographical elevation profiles used to model realistic local horizon masks (determining true line-of-sight elevation cutoffs rather than assuming a flat sphere).
+Validation: Cross-verified against published JPL Horizons lunar surface observer output.
+4. Key Standout Features
+Zero-Friction Architecture: Runs instantly in any modern web browser without heavy installations, node runtimes, or external API dependencies during demonstration.
+Minimalist Aesthetic: Styled with warm gold and amber glassmorphism, high-contrast dark space backgrounds, and clear telemetry HUDs designed for mission control readability.
+Mission Scoring Model: Generates an objective, composite score :
+Score=(Solar %×0.40)+(Comms %×0.35)+(Overlap %×0.25)
+Mission Documentation Export: Single-click CSV export formatting solar and RF ephemeris telemetry for external engineering tools.
