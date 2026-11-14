@@ -1,0 +1,8 @@
+What does your project do?
+LUNA SCOUT visualizes Sun and Earth positions across candidate lunar south pole landing sites, calculating solar power generation windows and direct-to-Earth communications against real lunar terrain.
+
+How does it work?
+Using NASA SPICE ephemerides and LOLA topographical elevation data, the system models the Sun and Earth's azimuth and elevation relative to the local horizon. A WebGL 3D engine allows users to explore the Moon globally or step down to the surface, accompanied by comparative timeline heatmaps and mission readiness scoring.
+
+NASA Data & Resources Used:
+NASA JPL NAIF SPICE Ephemeris Kernels (DE440, PCK, FK), Lunar Reconnaissance Orbiter (LRO) LOLA Elevation Data via NASA PDS, NASA Eyes on the Solar System, and NASA Artemis Candidate Region specifications.
