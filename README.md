@@ -1,4 +1,4 @@
-# Luna Scout — complete updated project
+# Luna Scout —
 
 This complete package includes the current frontend, Python backend, scientific datasets, verified images, tests and project architecture. It already incorporates the earlier marker, spacecraft, live-status, realistic-terrain and safety-ranking updates. Extract into a new folder; no earlier project or patch ZIP is needed.
 
