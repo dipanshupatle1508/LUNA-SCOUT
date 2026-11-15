@@ -1,0 +1,47 @@
+[
+  {
+    "file": "south-pole-pia13523.jpg",
+    "id": "PIA13523",
+    "description": "LROC WAC south-pole mosaic",
+    "source_page": "https://science.nasa.gov/photojournal/the-lunar-south-pole/",
+    "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia13/pia13523/PIA13523.jpg",
+    "date": "2010-09-27 publication; mixed acquisition dates",
+    "credit": "NASA / GSFC / Arizona State University",
+    "sha256": "c1b2b53bb0abfa99be919b161af155cc8481b4d1af34f87cd971cf18e1181f8c",
+    "dimensions": [
+      1280,
+      1280
+    ],
+    "role": "Verified reference observation; not georeferenced automatically onto each candidate."
+  },
+  {
+    "file": "south-pole-oblique.png",
+    "id": "M1407524099LR",
+    "description": "Oblique Shackleton rim",
+    "source_page": "https://lroc.im-ldi.com/images/1276",
+    "download_url": "https://lroc.im-ldi.com/ckeditor_assets/pictures/1229/content_M1407524099_LRmos.warp.No_Arrow.1100pixelCrop.png",
+    "date": "2022-05-18 acquisition",
+    "credit": "NASA / GSFC / Arizona State University",
+    "sha256": "208e63e6e48ae8b54faf4ba41e7c53f3b7ed295c47b58ebba4941a060eacb68c",
+    "dimensions": [
+      1100,
+      1100
+    ],
+    "role": "Verified reference observation; not georeferenced automatically onto each candidate."
+  },
+  {
+    "file": "south-pole-nadir.png",
+    "id": "M146846913L",
+    "description": "Geographic south pole, source red-dot annotation",
+    "source_page": "https://lroc.im-ldi.com/images/1276",
+    "download_url": "https://lroc.im-ldi.com/ckeditor_assets/pictures/1230/content_M1_TRY2_SPOLEcrop2pole1100pixel.png",
+    "date": "2010-12-13 acquisition",
+    "credit": "NASA / GSFC / Arizona State University",
+    "sha256": "dbaa03edae1a2684ebd1e0405f39cd0c318e86f29a80059a6672f7e3ac467f8c",
+    "dimensions": [
+      1100,
+      1100
+    ],
+    "role": "Verified reference observation; not georeferenced automatically onto each candidate."
+  }
+]

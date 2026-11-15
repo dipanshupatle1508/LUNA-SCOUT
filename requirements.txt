@@ -1,0 +1,6 @@
+fastapi>=0.115,<1
+uvicorn>=0.34,<1
+numpy>=1.26,<3
+spiceypy>=6,<9
+rasterio>=1.4,<2
+pyproj>=3.6,<4

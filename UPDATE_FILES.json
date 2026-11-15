@@ -1,0 +1,430 @@
+{
+  "package": "Luna Scout complete updated project",
+  "contents": "Full source, scientific inputs, imagery, documentation and tests. No earlier patches required.",
+  "files": {
+    ".gitignore": {
+      "bytes": 55,
+      "sha256": "5a1f8ebf0b39be977f3c3d91fbd1e3f8daa00c27d5fcedb4ec579ca7956c7ad7"
+    },
+    "LICENSE": {
+      "bytes": 1272,
+      "sha256": "da7d9bcb6004d8afb716ec1481aaf4df220c3e3a0d7981c7bd6d8e34c692c8aa"
+    },
+    "README.md": {
+      "bytes": 7144,
+      "sha256": "8acfe2f53af6a0a05b3c52e14fcd5a21b3b7b1419c52092d7bb0dc2a2532623d"
+    },
+    "START_HERE.txt": {
+      "bytes": 993,
+      "sha256": "14e41d72325d64a08af50ffec9ad3b96eed5998254a14ab434a9728a197d6ee9"
+    },
+    "UPDATE_README.txt": {
+      "bytes": 560,
+      "sha256": "f0b4e7d46a0ad432910aca03336989556f5e476d9ad3285c96e221f1676b62b1"
+    },
+    "backend/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "backend/app.py": {
+      "bytes": 8110,
+      "sha256": "98885ebd09cdaa8a5904f9f2907735ca1247049206fb78c8ac105fa7ef3c4b2a"
+    },
+    "backend/celestial.py": {
+      "bytes": 1727,
+      "sha256": "b3fe76ed116cdcf583e89efc534629d8a49ce006b9c57f872ab6c60f8bd4105d"
+    },
+    "backend/engine.py": {
+      "bytes": 7123,
+      "sha256": "9d28678a01f3b2c75d3763566534a1e79145e80611540a00225199315bea6ec3"
+    },
+    "backend/flight_status.py": {
+      "bytes": 4117,
+      "sha256": "f9e839af0163f59a010b14b2c5639f36e30a6dfabaefc0ff799e70c710c21338"
+    },
+    "backend/polar_survey.py": {
+      "bytes": 6258,
+      "sha256": "95738c04fabaeef08db46ba954dc1ca41f782443f609d3b5b6a3e3b5e616c400"
+    },
+    "backend/safety.py": {
+      "bytes": 5471,
+      "sha256": "e1f1d2887a27de5a8f114568defd0bc410dab933207ffb1b1997001337d96fff"
+    },
+    "backend/sites.json": {
+      "bytes": 2475,
+      "sha256": "0507e045ddd0583bf9fe8c8e2a7ddadf00ac193d1240a2cba498b5a0ff397ffc"
+    },
+    "backend/surface.py": {
+      "bytes": 1218,
+      "sha256": "b6bd09ff701667e1b5d365f26f3852fd85b7f5bbe29af8e10bbddefabea677d6"
+    },
+    "backend/terrain.py": {
+      "bytes": 3893,
+      "sha256": "4b4364a744bf79bddf2cf790eb57a3dba4233baf8a1d635edee02952c4cb4677"
+    },
+    "data/kernels/de440s.bsp": {
+      "bytes": 32726016,
+      "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+    },
+    "data/kernels/de442s.bsp": {
+      "bytes": 32701440,
+      "sha256": "54d97562a5b094d298b1b8eafa5a2e17e3e010ce85e1a366d07f003ad159323c"
+    },
+    "data/kernels/moon_de440_250416.tf.txt": {
+      "bytes": 19478,
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    "data/kernels/moon_pa_de440_200625.bpc": {
+      "bytes": 12863488,
+      "sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+    },
+    "data/kernels/naif0012.tls.txt": {
+      "bytes": 5257,
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    "data/kernels/pck00011.tpc.txt": {
+      "bytes": 131226,
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    "data/manifest.json": {
+      "bytes": 2987,
+      "sha256": "6942974bb3b15d1fd676a9255935fa04d480a9cf5f991006ab14f45a85683b15"
+    },
+    "data/terrain/LDEM_16 (2).IMG": {
+      "bytes": 33177600,
+      "sha256": "a511e40d7a3ea3275945b4da2a1df377133264fab0be94b7434b1cf8907254cb"
+    },
+    "data/terrain/LDEM_16(1).LBL": {
+      "bytes": 5121,
+      "sha256": "9aef29463ccc6ed3a3fbe0df3ecd830a99c69e16b564f455507dee2697096579"
+    },
+    "data/terrain/LDEM_60S_240M.JP2": {
+      "bytes": 43435022,
+      "sha256": "06a81828c27c4def208072da71624efb03f9aaa3a774f956b6d4f4846542f2b4"
+    },
+    "data/terrain/LDEM_60S_240M.LBL": {
+      "bytes": 4991,
+      "sha256": "dde15a7f2a64ff8d744913c31d606ef572a992c74a44a72356ff91ca9cf4bfcb"
+    },
+    "data/terrain/LDEM_80S_80M.JP2": {
+      "bytes": 29837992,
+      "sha256": "c088dd4f510e879375ee7e6f0d320ba84115f535f45fb592dd7f83a7d2e83ae3"
+    },
+    "data/terrain/LDEM_80S_80M.LBL": {
+      "bytes": 4986,
+      "sha256": "107c7558cbf8832e4119d3c8c2b1b272623344275c85378a9b0e03c22876eb33"
+    },
+    "data/terrain/LDEM_80S_80MPP_ADJ.tiff": {
+      "bytes": 189158392,
+      "sha256": "82030dcbdd7c4bb0c7d858e9b4b293b9f2cda5a543ba31ec0f42784bd6beee5a"
+    },
+    "data/terrain/LDEM_85S_40M.JP2": {
+      "bytes": 24960972,
+      "sha256": "9b5e29faf57883be1e3ba1a7fc536f08ff628662184097630b19759a35ffec18"
+    },
+    "data/terrain/LDEM_85S_40M.LBL": {
+      "bytes": 4986,
+      "sha256": "d8105776af7fb79b1862ffa3946d013ec34f4dc6a00b7f6bff22ef8f768a5d3d"
+    },
+    "data/terrain/LDEM_875S_20M.JP2": {
+      "bytes": 21462406,
+      "sha256": "fff7c2017a192788066a0867d78fd1ccf783216e26974b5e65287669aa472bac"
+    },
+    "data/terrain/LDEM_875S_20M.LBL": {
+      "bytes": 4988,
+      "sha256": "b9973d9566090555a566537e0f86ee9e959138cc42504228bab7515b7d3e6b0f"
+    },
+    "docs/DATA_SOURCES.md": {
+      "bytes": 4748,
+      "sha256": "1b8d91e6eb685f0cb236d3800803aab73e4143a7ab18a2ab4d6ace2c5b9e8264"
+    },
+    "docs/FLIGHT_UPDATE.md": {
+      "bytes": 9162,
+      "sha256": "8d52b4af40e2e76e0497b803a17c044a97f408cc1ee9e8b0b9f76e900aa78c1f"
+    },
+    "docs/ILLUMINATION_TERRAIN_UPDATE.md": {
+      "bytes": 6074,
+      "sha256": "5886a0b09774e1cd81bbb3c1b87debdbd372c3818025e34fca83dd2f49b7a925"
+    },
+    "docs/LEGACY_SETUP.md": {
+      "bytes": 8250,
+      "sha256": "f78dfcd75f85c2fddf4577bc9c882d4da917ac5c9d3aa4f210827a2082be0011"
+    },
+    "docs/Lunar_South_Pole_Open_Source_Resources(2).pdf": {
+      "bytes": 20535,
+      "sha256": "a4753e09ad8eabd12e83587c4412612619aa741bbc7cc546cf136f15c9cdd4d7"
+    },
+    "docs/METHOD.md": {
+      "bytes": 7649,
+      "sha256": "37c30082a96f9d2b3f5c96c2e0e6faaa9bbf0f3ff281b74b8a94b7607d003322"
+    },
+    "docs/NAVIGATOR_UPDATE.md": {
+      "bytes": 9162,
+      "sha256": "8d52b4af40e2e76e0497b803a17c044a97f408cc1ee9e8b0b9f76e900aa78c1f"
+    },
+    "docs/PROJECT_ARCHITECTURE.md": {
+      "bytes": 17036,
+      "sha256": "49e9847c4e54f697878b301814fc0860e3dc5c82d26caab1247ff1b62fb9e389"
+    },
+    "docs/SAFETY_RANKING_UPDATE.md": {
+      "bytes": 9319,
+      "sha256": "1e3fe260be4ad72627a35f8a6597d5b4a930eb435d5a653d3ae00ee0c586405b"
+    },
+    "docs/SOUTH_POLE_IMAGE_SOURCES.json": {
+      "bytes": 1967,
+      "sha256": "8108f6b297b925c3451e2553f59bc45ac2f5ae295b7b13cbf1f8c0a89c2e6ce4"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 6199,
+      "sha256": "2a416d80472e738ad79cbed556140cd8081754c7f465568c7b2dc47daec832e1"
+    },
+    "docs/earth_link_check(1).py": {
+      "bytes": 6338,
+      "sha256": "cb6ea561f7fb5e905b4f5304eca3ad5b6c75221d4f87d9268d2146fac329af49"
+    },
+    "docs/kernel_comparison.json": {
+      "bytes": 717,
+      "sha256": "326dc5724cb2bc2d53c55999a500c300d64cb00d67879fe2ed35a51d6a3d7a57"
+    },
+    "docs/nasa_lunar_south_pole_data_research_pack(2).pdf": {
+      "bytes": 55193,
+      "sha256": "bb8d6d43c2216347fd6d858244d65427d227ce6ed0180cb440107d30e6c10f3f"
+    },
+    "docs/sample_results.json": {
+      "bytes": 2253,
+      "sha256": "058d41f004716db9afc70d48def14290186b64efac244bf142dd8fd78258e8dc"
+    },
+    "docs/tested_versions.txt": {
+      "bytes": 120,
+      "sha256": "a9bde8bb93b7cd4920dc8e106ac5b64b4f2b62984e2368fbb113b6f198ea047f"
+    },
+    "frontend/assets/.gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "frontend/assets/apollo11-undisturbed-soil.png": {
+      "bytes": 1391324,
+      "sha256": "0199e3975f57538fbcdd01b547e18036d0467513edd46a330e1b780f4015ee44"
+    },
+    "frontend/assets/earth-atmosphere.jpg": {
+      "bytes": 512606,
+      "sha256": "2faa400d1eade3bc44caf6750d1b772bd9bbb6d87362c02bc7c3304e78fa0a9d"
+    },
+    "frontend/assets/moon-height.png": {
+      "bytes": 804894,
+      "sha256": "a47d57d9d3d6ac96d2a3df44f3e23ebafe0514e3709e0d1e74812ac92e91216a"
+    },
+    "frontend/assets/moon-lroc-2k.jpg": {
+      "bytes": 457942,
+      "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170"
+    },
+    "frontend/assets/south-pole-nadir.png": {
+      "bytes": 283577,
+      "sha256": "dbaa03edae1a2684ebd1e0405f39cd0c318e86f29a80059a6672f7e3ac467f8c"
+    },
+    "frontend/assets/south-pole-oblique.png": {
+      "bytes": 622394,
+      "sha256": "208e63e6e48ae8b54faf4ba41e7c53f3b7ed295c47b58ebba4941a060eacb68c"
+    },
+    "frontend/assets/south-pole-pia13523.jpg": {
+      "bytes": 386928,
+      "sha256": "c1b2b53bb0abfa99be919b161af155cc8481b4d1af34f87cd971cf18e1181f8c"
+    },
+    "frontend/assets/south-pole.png": {
+      "bytes": 1315056,
+      "sha256": "106abffa0a6bd42a064d2bf98f2ae3e02e048cc5b47baa9b472a0bb8ec2de45a"
+    },
+    "frontend/css/extension.css": {
+      "bytes": 12038,
+      "sha256": "7710ac495fa1a71dddf8403726760fe5fe6d51e3cd868cd988ce440ef744b50c"
+    },
+    "frontend/css/flight.css": {
+      "bytes": 10556,
+      "sha256": "e1a7dfd7b7695d9d8f7b42b04ef43db783b6c3f4397f62e7f0f4e37c6c308909"
+    },
+    "frontend/css/globe.css": {
+      "bytes": 5819,
+      "sha256": "3437b6e31782796ebf051ddcd08223485947c5c73bdbca7bc6b0280683fb78f4"
+    },
+    "frontend/css/ranking.css": {
+      "bytes": 6159,
+      "sha256": "2406b9b73f555fb466544c7496c3c98cf5e36805df1aff5fd35d73e3c300bcab"
+    },
+    "frontend/css/style.css": {
+      "bytes": 5305,
+      "sha256": "cd5b42d5e25c81d6eca7c8f7eddc72559ba7e2ad2fc043f5b215b4e4160ffaee"
+    },
+    "frontend/index.html": {
+      "bytes": 3930,
+      "sha256": "337c78064ad95cde4c3b3ce7baaedacc8c5a3b20cad44fc0bf2ea8147ed192a9"
+    },
+    "frontend/js/app.js": {
+      "bytes": 541,
+      "sha256": "ef8ab33e1f1e6c3b6870acfda13e3b2250891d56eb09f7157cc3527e4206e055"
+    },
+    "frontend/js/cpu-moon.js": {
+      "bytes": 2305,
+      "sha256": "6e6e4fc930629ff896b9d99dd0bf56d896e7e66d0ee6d7a9e32000aa70d6f67c"
+    },
+    "frontend/js/flight-core.js": {
+      "bytes": 5129,
+      "sha256": "f5153cb5db7510261dcfe603850f5a15b306898ad8fcef0a68adf2909e8adcc8"
+    },
+    "frontend/js/flight-telemetry.js": {
+      "bytes": 2271,
+      "sha256": "7b4a4f0f7a6de821d697d121a60379bc6d9d59e143d18f91a994704b0b5a73db"
+    },
+    "frontend/js/flight.js": {
+      "bytes": 17679,
+      "sha256": "78715e2f1d40ed0920ea32eef0cb6cb99a8cdac4642fdb242e0e0c4acc690480"
+    },
+    "frontend/js/landing-terrain.js": {
+      "bytes": 5453,
+      "sha256": "e7630f60a63d82b4e6626a57f310e56a2f73d70ebb13a144dd9692565aac89b6"
+    },
+    "frontend/js/lunar-module.js": {
+      "bytes": 6483,
+      "sha256": "a537da9b37d2f06ce963acf4534cbebd7725e3613e813c4498845642956f039e"
+    },
+    "frontend/js/moon-globe.js": {
+      "bytes": 8102,
+      "sha256": "ce2b375dc30391dda67ac8a6e48eb35b14d3756c888ba428a780c6c841f37b9b"
+    },
+    "frontend/js/moon-sky.js": {
+      "bytes": 6861,
+      "sha256": "d80dede0b83e25406f4e822b1748db38dc329b5636192967f42bd3a068162bf7"
+    },
+    "frontend/js/navigator-data.js": {
+      "bytes": 4946,
+      "sha256": "d99b11eacd97a1d1210654c7b3320356c344148d80aa4574fdd170dfd6384310"
+    },
+    "frontend/js/planner.js": {
+      "bytes": 17456,
+      "sha256": "7fe9d3c1c4e3eec1a422fe57d0eb9798737267f21d15323814e6f6b29b7c3009"
+    },
+    "frontend/js/ranking.js": {
+      "bytes": 8781,
+      "sha256": "bc9f5728e75c67457982595d4dc32c7e15c792f196dd03613654608d0e181a99"
+    },
+    "frontend/js/scene.js": {
+      "bytes": 538,
+      "sha256": "5bfd2397793d7d60a60ee281667fd5b5221d9030fe42b1846b0e9f032c1603f0"
+    },
+    "frontend/js/software-renderer.js": {
+      "bytes": 5012,
+      "sha256": "ab913794f91876e8c96d0afe0aaa39a44e68b8ca011548a389629d8064b28e06"
+    },
+    "frontend/mission.html": {
+      "bytes": 11587,
+      "sha256": "4598c06a14336f22eec3f9fe9810d0846fbc25342fbd2f49d3398d26fc988374"
+    },
+    "frontend/module.html": {
+      "bytes": 13481,
+      "sha256": "f57a6e4244dee62be1ee24264a2f93355f2317c7d42ed1e32dec56d4bfa1b03b"
+    },
+    "frontend/navigator.html": {
+      "bytes": 6096,
+      "sha256": "be5fc1015c13d8f4ae0419e0c61643ac8a9c7d33dc80f939bfc7f698c16c7b34"
+    },
+    "frontend/ranking.html": {
+      "bytes": 10457,
+      "sha256": "c4b48486cd07fef25f3c6b4b73cf5400dd7fc1540bcd5575cffd4c6db56c0122"
+    },
+    "frontend/vendor/OrbitControls.js": {
+      "bytes": 26375,
+      "sha256": "02bb4ade710f3e607329e37a21f098bc3ac70eb6e33daf8a65e79f4db785e7b2"
+    },
+    "frontend/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "7dddf7c5b8fd10ee654db8857d75d104b5557889aa5a91fc4ca545ea7c07062f"
+    },
+    "frontend/vendor/three.min.js": {
+      "bytes": 603445,
+      "sha256": "9274bbcec8d96168626c732b5d31c775aa8cfb7eaa0599bec0c175908a2c1ce2"
+    },
+    "original_frontend/assets/.gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original_frontend/css/style.css": {
+      "bytes": 5305,
+      "sha256": "cd5b42d5e25c81d6eca7c8f7eddc72559ba7e2ad2fc043f5b215b4e4160ffaee"
+    },
+    "original_frontend/index.html": {
+      "bytes": 2534,
+      "sha256": "2ca93064be147cd16dd346c375b0b41804418567f4860eff6babc4cacd985c6e"
+    },
+    "original_frontend/js/app.js": {
+      "bytes": 2908,
+      "sha256": "2789a70584929f57388ad6c6ded9242c40dd983df8713232e82dee8f701cc25a"
+    },
+    "package.json": {
+      "bytes": 96,
+      "sha256": "e2dd638e391776599f81dd77370d71fb44d48e3eb8ad9d3e35af2eccbde109e3"
+    },
+    "requirements-dev.txt": {
+      "bytes": 49,
+      "sha256": "c23feb58b6f9cab899b3e457b6cad56158f5315b366cd0f7a210feef72af395b"
+    },
+    "requirements.txt": {
+      "bytes": 97,
+      "sha256": "2028d6b6e9cedb577292a124cf79b52195f7c17d76dcfb4c19d923b6c1493751"
+    },
+    "run.py": {
+      "bytes": 161,
+      "sha256": "d14548a53e63553e383b9430abad307ca207d9abcc54f5e8c279b48d484db811"
+    },
+    "scripts/build_manifest.py": {
+      "bytes": 785,
+      "sha256": "0cd56ba9bda1e8fbf9d671b92319c6bc4ea334f7c9fa704b715feafcaf901f34"
+    },
+    "scripts/dev.mjs": {
+      "bytes": 490,
+      "sha256": "6548fd5bfee1e4c3a7fbfdf6720cfd2d121d00f8c1044228b513b424fe3fa33d"
+    },
+    "start_unix.sh": {
+      "bytes": 286,
+      "sha256": "1442c0f7c32b8c6250f6611b6c7467cf5be33153db97e23a5d1c6a67d0dde898"
+    },
+    "start_windows.bat": {
+      "bytes": 470,
+      "sha256": "f76f41b396b616cbdbe6773dec294adba0a2b6e6df68a8f21d348287da0f0912"
+    },
+    "tests/conftest.py": {
+      "bytes": 96,
+      "sha256": "2ec1e36f1f476a733e93d6b9a3404eaea6bd7d3d10c868f6cdc77828f68b30be"
+    },
+    "tests/js/flight-core.test.cjs": {
+      "bytes": 2837,
+      "sha256": "a1658415805acbbbf3b4b8b92b6f42d6e7a66df6e0d8be14fceb38217f47ffcb"
+    },
+    "tests/js/landing-terrain.test.cjs": {
+      "bytes": 1450,
+      "sha256": "d695d6989d7efc2fa02639ca92e0d2a45e216afc75c00221286c1a83a94b224e"
+    },
+    "tests/test_api.py": {
+      "bytes": 1284,
+      "sha256": "9b60d901c70a7d8a2cd946bcb5a8033fdd1abd0c38c505e7e71090dfecd321b7"
+    },
+    "tests/test_celestial.py": {
+      "bytes": 1774,
+      "sha256": "e17ee440731898fddb8fe5563ea77a0a4fa0fcc924830fd56ebd6b41beafa0a1"
+    },
+    "tests/test_flight_status.py": {
+      "bytes": 2912,
+      "sha256": "c1ada01b2ea5a050dbccb703cd835940300ba244fe739c233e897fd08d2116f4"
+    },
+    "tests/test_navigator.py": {
+      "bytes": 1645,
+      "sha256": "c280971986a682f5b9c8cdcb291255dee78940cf59bef1b96d016a4330dfbe6e"
+    },
+    "tests/test_safety.py": {
+      "bytes": 4746,
+      "sha256": "e1b3f6d71f4a2c979948e5eaf63f5b106137477e32f7351d126e16395ada2a2c"
+    },
+    "tests/test_science.py": {
+      "bytes": 3168,
+      "sha256": "06a646b4a4a875b668358fcc06fa812f02a3eae3a409f189d2d32bbd88d53e9e"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "shackleton": {
+    "summary": {
+      "terrain_aware": true,
+      "sunlit_hours": 86.834,
+      "earth_hours": 0.0,
+      "joint_hours": 0.0,
+      "longest_dark_hours": 226.711,
+      "longest_outage_hours": 336.0,
+      "max_sun_el": 1.488,
+      "energy_wh": 736.883,
+      "peak_power_w": 10.169,
+      "sunset_in_hours": 74.173,
+      "earthset_in_hours": null,
+      "sunlit_percent": 25.84,
+      "earth_percent": 0.0
+    },
+    "ground_m": 628.1987149923059,
+    "local_grid_m": 80.0,
+    "sun_start_el": 1.48756,
+    "earth_start_el": -1.511
+  },
+  "malapert": {
+    "summary": {
+      "terrain_aware": true,
+      "sunlit_hours": 20.17,
+      "earth_hours": 336.0,
+      "joint_hours": 20.17,
+      "longest_dark_hours": 315.83,
+      "longest_outage_hours": 0.0,
+      "max_sun_el": 2.183,
+      "energy_wh": 237.02,
+      "peak_power_w": 14.919,
+      "sunset_in_hours": 20.17,
+      "earthset_in_hours": null,
+      "sunlit_percent": 6.0,
+      "earth_percent": 100.0
+    },
+    "ground_m": 4460.924478384468,
+    "local_grid_m": 80.0,
+    "sun_start_el": 2.18269,
+    "earth_start_el": 2.4615
+  },
+  "apollo11": {
+    "summary": {
+      "terrain_aware": true,
+      "sunlit_hours": 9.459,
+      "earth_hours": 336.0,
+      "joint_hours": 9.459,
+      "longest_dark_hours": 326.541,
+      "longest_outage_hours": 0.0,
+      "max_sun_el": 3.936,
+      "energy_wh": 105.18,
+      "peak_power_w": 27.058,
+      "sunset_in_hours": null,
+      "earthset_in_hours": null,
+      "sunlit_percent": 2.82,
+      "earth_percent": 100.0
+    },
+    "ground_m": -1921.6185920256003,
+    "local_grid_m": 1895.21,
+    "sun_start_el": -13.41654,
+    "earth_start_el": 73.10915
+  },
+  "chandrayaan3": {
+    "summary": {
+      "terrain_aware": true,
+      "sunlit_hours": 28.986,
+      "earth_hours": 336.0,
+      "joint_hours": 28.986,
+      "longest_dark_hours": 307.014,
+      "longest_outage_hours": 0.0,
+      "max_sun_el": 5.763,
+      "energy_wh": 630.648,
+      "peak_power_w": 39.585,
+      "sunset_in_hours": null,
+      "earthset_in_hours": null,
+      "sunlit_percent": 8.63,
+      "earth_percent": 100.0
+    },
+    "ground_m": 529.4719434391859,
+    "local_grid_m": 240.0,
+    "sun_start_el": -6.27695,
+    "earth_start_el": 16.93443
+  }
+}

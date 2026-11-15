@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luna Scout</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/extension.css">
+<link rel="stylesheet" href="css/globe.css">
+</head><body class="home-page">
+
+<div id="scene-fallback" aria-hidden="true"></div>
+<nav class="scene-nav" aria-label="Main navigation"><a class="quiet-link" href="mission.html">Mission planner ↗</a><button class="quiet-link" id="scene-toggle" type="button" title="Return to the starting view of the Moon.">Reset Moon</button><a href="ranking.html" class="quiet-link">Safety ranking ↗</a></nav>
+<!-- ===== Background: NASA Eyes on the Moon (default Moon + Earth framing, interactive) ===== -->
+<div id="moon-stage" aria-label="Interactive Moon globe"><canvas id="moon-canvas" aria-label="Drag to rotate the Moon; select a region on the right to reveal its clickable surface point"></canvas></div>
+<div class="cover c-top"></div><div class="cover c-bot"></div><div class="cover c-set"></div>
+<div class="scrim"></div>
+
+<!-- ===== Project name (top right, above Earth) ===== -->
+<div id="title"><div class="brand">Lunar south pole</div><h1>Luna Scout</h1></div>
+
+<!-- ===== Landing page: steps + start button ===== -->
+<section id="hero">
+  <ol class="glass">
+    <li><span class="gem">01</span>Choose a landing spot</li>
+    <li><span class="gem">02</span>Choose a mission date</li>
+    <li><span class="gem">03</span>Take off. Find the best landing site for your spaceship.</li>
+  </ol>
+  <a class="go glass start-link" id="start" href="mission.html">Start mission</a>
+</section>
+
+<!-- ===== Landed / candidate spots (filled from /api/sites) ===== -->
+<div id="spots"><span class="tag">Choose your landing region</span><div id="chips"></div><p id="selected-site">Select a landing region, then click its point on the Moon.</p><p class="site-types">Four exploration regions · two historical touchdowns</p></div>
+
+<section class="glass sky-card" aria-label="Sun and Earth motion"><div class="sky-heading"><span>Moon-relative sky</span><span id="sky-clock">UTC</span></div><div class="sky-grid"><div><label for="sky-date">Date & time · UTC</label><input id="sky-date" type="datetime-local" min="2000-01-01T00:00" max="2050-12-31T23:59"><label for="sky-speed">Time speed</label><select id="sky-speed"><option value="0">Paused</option><option value="1" selected>Real time</option><option value="3600">1 hour / second</option><option value="86400">1 day / second</option><option value="604800">7 days / second</option></select></div><div><svg id="sky-map" viewBox="0 0 190 130" role="img" aria-label="Moon-relative Earth and Sun direction overview"><circle cx="95" cy="65" r="75" transform="translate(0 0) scale(1 .7) translate(0 28)" fill="none" stroke="#ffffff16"/><circle cx="95" cy="65" r="11" fill="#777b81"/><text x="95" y="92" text-anchor="middle" fill="#b9bec9" font-size="8">MOON</text><g data-body="earth"><circle r="7" fill="#4f88b5"/><text y="18" text-anchor="middle" fill="#9fcae7" font-size="8">Earth</text></g><g data-body="sun"><circle r="5" fill="#f5d89f"/><text y="-12" text-anchor="middle" fill="#efdbb5" font-size="8">Sun</text></g></svg><p class="sky-caption">True directions · distances compressed</p></div></div><p id="sky-error" role="status">Loading Moon-relative positions…</p></section>
+<div class="home-footer"><span>Sunlight. Earth visibility. A clearer mission.</span><a href="mission.html#view=compare">Compare scenarios ↗</a></div>
+<div id="globe-status" role="status" aria-live="polite">Loading the Moon…</div>
+<script src="vendor/three.min.js"></script>
+<script src="js/moon-sky.js"></script>
+<script src="js/cpu-moon.js"></script>
+<script src="js/moon-globe.js"></script>
+</body></html>

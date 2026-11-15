@@ -1,0 +1,491 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/skyfielders/python-skyfield)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 588.4729 515.6354 599.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/AndrewAnnex/SpiceyPy)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 549.4729 507.1439 560.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://naif.jpl.nasa.gov/naif/data.html)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 510.4729 487.3134 521.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/aelanman/lunarsky)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 482.4729 487.7724 493.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/astropy/astropy)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 454.4729 474.5464 465.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/nyx-space/anise)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 437.4729 477.8529 448.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/cosinekitty/astronomy)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 420.4729 498.1594 431.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/astropy/astroquery)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 392.4729 486.8289 403.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://ssd-api.jpl.nasa.gov/doc/horizons.html)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 364.4729 516.5874 375.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pds-geosciences.wustl.edu/missions/lro/lola.htm)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 277.4729 539.7244 288.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pds-geosciences.wustl.edu/missions/lro/lola.htm)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 266.4729 386.6734 277.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pgda.gsfc.nasa.gov/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 249.4729 448.5789 260.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+16 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://trek.nasa.gov/moon/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 210.4729 449.5139 221.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://quickmap.lroc.asu.edu/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 182.4729 459.9009 193.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+18 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.lroc.asu.edu/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 165.4729 441.9404 176.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+19 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DOI-USGS/ISIS3)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 148.4729 481.6269 159.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+20 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/planetarypy)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 131.4729 460.3769 142.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+21 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pds-geosciences.wustl.edu/missions/lro/lola.htm)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 103.4729 539.7244 114.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+22 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pds-geosciences.wustl.edu/missions/lro/lola.htm)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 92.47293 386.6734 103.4729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+23 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 
+  14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R ] /Contents 57 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 56 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+24 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/OSGeo/gdal)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 732.9729 463.2159 743.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+25 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rasterio/rasterio)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 704.9729 475.4814 715.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+26 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/makepath/xarray-spatial)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 687.9729 507.1354 698.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+27 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/OSGeo/grass)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 670.9729 467.9334 681.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+28 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/numba/numba)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 642.9729 470.7724 653.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+29 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/mapbox/martini)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 603.9729 474.5379 614.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+30 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/mrdoob/three.js)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 527.9729 475.4899 538.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+31 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/CesiumGS/cesium)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 499.9729 486.8119 510.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+32 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/OpenSpace/OpenSpace)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 482.9729 508.5804 493.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+33 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/plotly/plotly.js)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 454.9729 466.9814 465.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+34 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/d3/d3)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 437.9729 437.7074 448.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+35 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/observablehq/plot)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 420.9729 483.5309 431.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+36 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/visgl/deck.gl)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 403.9729 462.7314 414.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+37 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/Leaflet/Leaflet)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 375.9729 469.8374 386.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+38 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/openlayers/openlayers)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 358.9729 501.9504 369.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+39 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/proj4js/proj4js)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 330.9729 468.8684 341.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+40 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/maplibre/maplibre-gl-js)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 302.9729 502.3924 313.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+41 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/Stellarium/stellarium)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 285.9729 492.9489 296.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+42 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/Stellarium/stellarium-web-engine)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 257.9729 539.7159 268.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+43 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/pyodide/pyodide)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 181.9729 478.3374 192.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+44 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/streamlit/streamlit)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 153.9729 483.0294 164.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+45 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/plotly/dash)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 136.9729 457.0704 147.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+46 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/fastapi/fastapi)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 119.9729 468.8854 130.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+47 0 obj
+<<
+/Annots [ 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 
+  34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 
+  44 0 R 45 0 R 46 0 R ] /Contents 58 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 56 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+48 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.nasa.gov/commercial-lunar-payload-services/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 760.9729 539.7074 771.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+49 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.nasa.gov/commercial-lunar-payload-services/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 749.9729 397.0604 760.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+50 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.nasa.gov/humans-in-space/artemis/)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 732.9729 527.9094 743.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+51 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://en.wikipedia.org/wiki/List_of_landings_on_the_Moon)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 704.9729 540.2174 715.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+52 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://en.wikipedia.org/wiki/List_of_landings_on_the_Moon)
+>> /Border [ 0 0 0 ] /Rect [ 372.5039 693.9729 403.2144 704.9729 ] /Subtype /Link /Type /Annot
+>>
+endobj
+53 0 obj
+<<
+/Annots [ 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R ] /Contents 59 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 56 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+54 0 obj
+<<
+/PageMode /UseNone /Pages 56 0 R /Type /Catalog
+>>
+endobj
+55 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261114175550+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261114175550+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Open-Source Resources for the Lunar South Pole Landing Site Tool) /Trapped /False
+>>
+endobj
+56 0 obj
+<<
+/Count 3 /Kids [ 23 0 R 47 0 R 53 0 R ] /Type /Pages
+>>
+endobj
+57 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3046
+>>
+stream
+GauHN?$G#6&q05PR(#_8^f\#GF8EghdbaUA/IcgXQ`ejbN$)m5<Cm[s^]'7(Ch$3?f1f")'$T"VbhgdlBEJ8Srt=oZL]IFC6iS_=ikTpF`3VRn?c2"'`V101Mm!S"CUe`K)VAR_,]NN_XRu[+2u8&,[c7i<E.#k%L)rN!60C:eWIS-7WB6Io+bP''K[>@4.>rQJ[Km`*121(9QSAFDo2g7`g;(E[Y)bW?CBe><p.sn"H2hR@aN4%VJNN?TBJ`r3*r*GO()_ECHO,onnA_nX&;:RrXf(Bt`BXhsNe*nqW5Gi3"K4BdHXR[rF\K<s1g]`t%5Y0XfP=5Hm^>:6GM>!)i:-K7gVhFo7UGJP=6'!cHH.3V\EnfV6;S_Ii@Y`?B7_cX\BJX-Io=7L(sl2`Z8>7`&W7B[>*'G1=kpcf!dV`)pk"9+D=o\r]P4Z[U:9+O1>+o2dPtjUC(d[TLAU0D_kCr#,p%33L^ol`ej'J@3?.:N.s$?&(d[=PU=c*X$]WEVgjtR-pX4^G=IMd`'![.X7Mm`m%*_\T-*0KI6,Xsagi.Ckr1`G,_#m$8idh-UJi@m)\-GKU4#>T?,i06>=L)fN:.V5H"\BDJ"\X_g5u/M36>3;^hd43P+j<Un_"&4mN,W@ELWOA\s#bWeduRAJ<:8\5+hBK=[ub20S?3/,oIWVn'c0_-.oIE[4d,>0%fe%rSHc/(*H)J\VL-?:[Z4[B/$jeG%2'&kASC'5c#1?tLr&7imn3nPQa,XFbYWlqq;p^X?]0TtHK/VO`qZ&[*.p1n/][Bek`HH4#-1fbW;^#V1N<'UEQ>\<XRU09NX*k^_`TpP4Vo=pSg*T4:Xqo],B*#la)<jk_6isX;tZ8-!B_"H\WL`L((J$<bCfC-48ra!'K`e&7D!BuPVoJ6ha<h:3T]A,[Dh@n]q-lI5Mu0fR.XRWn"VCk&7UX?E6rocc][8LeVWn]*3MX[caV`]F'N2Z4$#ESj8/SUqg^RAG':W+E>C/GJ4#&=BCLd-aMAS>/S<H+28#Pf_o3qW1D-ri^4r*[1VnN@Gi5s/VH?Z^U14!(Z\"pVP*f7Jj@j$^_S")X-29,f0_$X/KCZjYDG<IJTDShlYaXZ&-r"rfNb?7eUB4,IjK%),>eTL?no_,*Nl-2\q\lM+[]ltKo]6Qs-=f=uOS%Ton3%oSEB@K*/4nU\p,oNh2#85!@3]HS11Al@?+oaJeQ\D8YMNNuf$.+7N*n/joe0^d[@g/DM.nFP?)VufKUF9@+^^%Q/Z:aAH!PPo]'Gg!q7Ak^@$SaCh13HW\u0(Y&haFC9X*4Gd6EODdPnO;d:Y/gm?@ehH7'M#hCq).fL<*&_h@;Ed.;'f/S*Rh#l!H4P^YLYI=5ZYd\(>kN:E10<aA7KH[Lq[9rKIJph_Kib#d0'1pg^AWO5JBqYHbsmWGTm'clbPOUKcT`J)DS\5aL;i/i+E9V`:m\cqdp@3:?ls%eh!YEPXEeajK@-af*IZPP;Qc?3H(<.s!QC_T,sji3r%1Nl1Hr`Qam$/977`"&XK6o:Fl0V1:c=;T`W6sr'm[QX(dZ^<8E<srib9pR:RC]_$34Tj1o%)qZK5l7HXqb`kJ>g4nIUYKh\_anYXXFW+]AlA;G28iH%THP@a&9^0UF^^!O2#t/Ui@4;V[m,0oV#fo2R*4N<UPFWX<qmTmi[!7O=M3d9K?eSc1;U`'%s/QmSuVd;S$Ms'(IT&!3Bu!U8KPc9,TFkDCUg.F3l.8,;\nEu</dCua6uk;i5%*ZpKX]REn@7\+N/&^im#j-1F=%$(:Rk8YNF4)CF@9cC.jFX(_'l\iW5r#r-)d*fm'/uL3`b\$/Ta!pAKA[)C80P!Gr\#LP$dcQqX\%nBd2MGM#u+:00bTPT"q&Q=Kfbn_`=d&Io<_,mSE*/[0M=P4bFsktASRd?N6%Sn/Q,Mrf#]kBW-g^V-j@31W.HH(C'V^dG^uel"-U^3a9K"5&hF8Q6_TojnCbA$Yh<G3s-nn&E%FNXV]uQ@0EQQ6tVB9R'^-[!K#jd[-fP)qI]-=dk.R1Z;nZZ:W;oQ\EPb:$#G4%;HOcWd1,g1eob5Yt+Wde6nLW'c8P@jblO]bDX7:l'Oa!iei17J^2[Ai_CKU@@0Kpf.#Ftns!bY_t.W5mi0$sAni<"TZ5Y[)pPI]ZlN$(E%A:4fcH^WH#0r$j$rIiE?COtc3]]L/[X3W0!r$ViKo5+Q?/Q.g<Rbc<T3bo\0%n%\L.?Q1VK0@A`Xq*AAIku4/IBbQ"uBr^?aO7@!l&a^0Iri>[6,VoL52Zld@&sG#.XiaY"Fp,qQ*EB@(]R>BPL"CC@<8\Z`_1l[h@J5=Vt40:UJ0d4]\.a!40BZF?u5ZSm&k#VEL/q@T(joITm58GXKa<'&UH6?uHJ3%^bKa&nnH]9m7u$b:;Mf&\fe&J$-llt+Vj6j.^Y_J-r2>?tlVfJIEB,$AN/P.T';"AZX`Lo*^aWOnG0eZ-G4&bl=*[Zdk\f\snO;"ZlI-p'#hS<2<6P?`I+$[-oq=!WlkLV2Xmr08A)%.JRQ!F@m-r<_eVcMqeE\8=q>aWnC:QF`73=NDNl!sd@:Ut^XkB7\9F1SPGSM@?WcSRQ,WZ6_`,E,RtTJPR-omVccbSr\W4*/8K<p,*AND3,NuJAh&mg@bU>H*1l\0c-^TC'*tYI3OWblc='5>*uVtMos7SZ;[L8l-Ed5_CW64:nAWOn.-6IMb'5r@V,O%Ln:3A=Q0'gi0Cb%6rFjc&]gHdVD5f_[?fjdM>km$C3DIUIojoU)F[e?E_-(0M049fPToej<@(4]c^UkFK4jsijPo3":Lha9NBq?>V@:2\LK\O`R[kM!Ok`Ma-0/(lL)i/%+61nc%ML.?2/7f96_PsB4K/OoP\+O=j)]#lGW&8c2_'=T:"S'a6H$f'Dbdo0(]#(1J+S*?@Ot[4VM&%_<OQFDO9rj^._h=8lL/,#-!@`m^r.m<n:.8Xr>":Ge:eji<4F)aKU]Z+oO3.)A35e#)0C;aKU7r,1TF)%UXD!%GqlJW*n:t!Oo*Y^$ot*-OF:sM?Mkleo(6)~>endstream
+endobj
+58 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2887
+>>
+stream
+Gau`WhfG8V&:X@\Z&_Z#6N!'Uns%.nRuYrYQJ9,qVK7?Q+9mk_+ZmhRh`VMVA-$<e:#a+>C!lA)GK\jP]>O[iIuNBrT)efe!7P9`0MH^nJRN=P4P[f/LPu0bFqRj`4DhP(>]Y#)Ri-2?b1H1l`_O-UBY%p&9JBbsZ=c(E4+YT09hIArfHq-fNl;\R(lMf(Iq1C,i5aWNE)/pm7_F;-0C\Ip[+S@DC0k-1*Ec;p)jc&oak,.jG8$Cj>g9Mn)]+KCc-RK_2*j$1p0=5@AidAuRg6"@jl-qA_*hfZ%&PIN\?n*fQ1=&W97`l>4@SmFKJW\$-.sUmH,S.^FBT?XOE!BYD*k6"hTQ&UZS^-Q/XRAri"T3VTi1\b?%[CgY;+kh24A1"5G3:^l.NRTSnhQ?SEa=5402RDNa4H6fsQl8Vkr$[cIh\%B08C:)83hpgqU_"otmEIg7>8RYRr:e"MLC"CX5`"WHR*_Dc)EiCjY94SU5,hL,Lu&c=dT8$49W?/&jYf=JheFY&96-E>ta8S_=Yqb:M1%!EDsCF8bN-!>s;Ldr&9QHK.9h3[!t-eW"_U`A$I#'f!hp(&C28fb`qs>7]AdR`K'[@_sK:Vjt%M-Wq;^O@M#?RKC8>&t2\oT4V<U+[L22X_N&io4%8f*c@8^L55"8M]9g9Er(32T\H78J.oKALah\CU4pLMghlYEV$LOE$?7FZPcfoup`-+2_d@0oCj#XIfN-1f%cUlK4!01G=2HuN:.0h&^1RghS/'9g0']Y*7$5"=;E0No;+'?FL]jB/Qh+#R\sgD`EDFS"70(3(+rWA`ol2_JrnV#a2]ijR5Wdi4\AGXmGES;J2\cnT8,F2R8qpYI^-r?KQ9)#K&][]]X5I?er!Y:_]j12;DNB_9^Mf8])91Fthbh"$)2jHJ>Al8>i,;$/&jV(n>EF;u&FP</Rd>3j`]Ic`K7>KeneGh3T*g2CEdOrC![4i@2]T$RnG8NdoGQiRdI>I$Ke9XW&GB%ZCAGJSbH+Q&p5/9$8u(?.;cA1UMI/')6:dkoQmX/KjD9uU&PA&beo`"'MPF;T>jEBg-sO!\psK>`DtreEKf2F/Q@l'Y\a:N?F?Q&&_#;L]P&5HHH$6KkQZ<q\U(HQ`J_p6*Dd:r)UdL:*ktMa"CCua"V?hsb#W[-.KYpE87(XVY;'g0bL7F!hGtZb:-SY1<kp^Z@ojC".bF"X..-:,pP(,[>FK3j6R9:n1]ke/WMSt7fdC1S6"L-l:c"S()-XEUE3#.:5V;$X%Om1.],[D`<=+cqr%ZShO%+!VrNb2*TBpYk2CMouJaseaqQ%PN0Br\1F:EN7rBBBINChHT5GA!nPVk5tB*GaUk=mB*."'MWa+*UaLKUbs-9/geCK/;iT:Ygu8E@>:$9(kd<>?F=!j:e=?!X%$taiR)r3(ZZ_@MYFg[!f_g/Hh4+-s'#ECLBn`_X`5^jYS%\&,-7rN%t5#Sr.3Fr2)aO<@o1CkC(0)-T$jY9X#pq:CK0j*O@%lJ[Me08m'8*h^kXRnYQgtN%ngMQ%daW7[/LUd@7.Zqg22Q/OL!j<TNMGFZpVu>[Zq8LNNO(p@pLT6,=e@<+HRoY#j;7$B122<#&<[@E`[ToPk3)?-Hj5W"a^q9tX$$2X.RW)Z*Lu8O+=CoEpIr=InA^3#e]]U7WTcbmGkB0E"2UE5r.ZCJ1?4VPsB:3%86pUQgW[=Gt5e,[^q4?)^]#b35E??j@JHm6btR)]);9Jmro:`5GlkZ3%[rL(;i+Gn^"7=5_,`U`a2@7HBS,@dlbWD'`F;bGW:Dea!bG.pTOoA%T2qeVS92rC:_,:g5cXhF!tu@c%g47Ks[LRj:VL#SBrY.>e-!6ocM<h1C\/*<d_Gf272F#H:dR9'GeE=i\u7E9s8.6T<u"A//#XQW>s4!d.':T*mC[6FK-,AMcm/X27jK;Vp:a<%tIeECu16(ef^h(uM$KL[-PF+p/kjg?XaBh<qsA%[*ugd1?q[/7Z?6=E[2BX!:S*\@_om<:b\b13%k=j)&-pI9ZoAW7WTtA(F;Z]@"B?M(^VK`WI)n-kng+gkS9?l[q=T8!bN7cPTqfC?fGfloSIL6ho;AO/(^,89Pq(3JEr,:s!bmc+N6[U!#7+l[T_TL!qlO>cfSjT7L/**+HJJqTWOk:O3V]`^TAcNl`=#I@6=/qkDiWYGlcj=bbFoUbj``]nMUa+P_3P_NKMD\a7^$SQdF+)Ve9uO3a4*'0jFa9_LQ02l[\@cOfjFaA'W-Lh$;rHRnSE?,DA=NPtWt?&JkQ.OfY6lVuE"fB&H6i9!PGSikK`KQ\O0M?\g:=Z8tMEi@L'fO&m9J^IFBCYfM_*7c=SCPd"4Meo^G_I5#O>*G8i\l7Rq>8?#OQ7PQc7IGV!4`)0ACi5,LW6ft_>,JsGV-.S2Zi-?ZQ5SEpf6c2gI_>DQaZFi&-=1tthM\/F].ARLhFI4+n]0Vn$Rk.'gOuH[FKt8J+E;_H,B*G+$@8boI_<BZ:qT#!nSd["O#A8<=t`B-'[=-F;":^pn(A'I,7V;_hETH,5e2@iftH,q9OSZd),#/A2_!ZVZ\iE99ZmYY8lc<]2Z'p6?MGXaB4t9ADkd0]bnB*DX5XIa"snuu;=(apWd6fkqo,(aOsH&%o';FV=$EKH71SDmC(loQ>F>QT/Dk%RrquPDfWV4h^41?Qk$+.:iL5R!JPV7U?^/&eJ2W^Pn=Zjc6n+uN"LIGBWa;,U#DM!!PCl%)A5-qU^='LIh0o2rY1amcIO>%=:!;#dI5dgU4B]jRct&b22]cY4T/0Oua.4:>'d>uMW-\EfLMl`B-.:t6&)G_OG!'lq:io#*B=_sRg]-b:4bo&QB6Ni@!k8&F$e?a4ge<?)=k-6uPN"^Y]@LCO%N#-II$_@d~>endstream
+endobj
+59 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2116
+>>
+stream
+Gau`T9lo&I&A@sBln(hE;?T3P.QP%WdO')L,uT*\N!COm$8G++!,+gsoj*ZR7+nH>\nN*ZCln]5]C.oL/k!Lk+4C(I$\4ic0RcB>\?JMTppL]k$[B?Eq0K=eM9NcbSo!<=JO?:J!k83PbUal@lN+72f:0;.7^hJUHsBsmkb9]/KXn&S$>(JpYRhu`$U.Um[.(J^)16%rq4O=siX7;DQotrg8+uT%lAT<`]\`9VkklGk-IL<Q]YMR\ES)U5&4J5(AE&Bi"Dg$dViGPe.*Xf.J3W^Cf8Vns8-kAEq>uYFTC&/imnIesm1ap4R=AU?"*a#T4O_CGLu0ck-MK)QY`!GgRGp'nZlh;T3=T?`NiapA+/6!!EG)Za+.BY@KA-*[$^(7@7YicSl@;)!Z4A6)`"'m7Gj5K_-jEpD.cfM'SkElaEkJ;fEP]ia6/t.^:2@6Jjq1WYSB]C<r*hR6*1A*r+LcN=c^!LaKF4QW$pr3^OOGuDAHnUGN+lifNa"4)o\I[8p-#0<YTkB:s,KUf)ffZ+?J?c+eBZ"W3#4s!AB\b*jlQtU(#@r&-C3B-AL)1RT%`]:nGDY&iBNNp'jNoIJ4C[7A2rH5#4V?R>DNaV$.Wk4J7KPgUS).b_"<M81.c9uH\KT.#^/6/Nb)j"0*gR>l@P>Eih`J$)RD/8,C,(Oml69o*\X?UU`Col:pLAH%Yj^EPXdG"7"Q!2>b$Bp,,]CoU1O%W[3$#Q2jBW++OD(<'?THY'MG-a'sC_eI0tg];J>,Hh\a[.g!GO(n+-8djEWuTA?jQho4q[;KMu*rCi#]_#2:Yj??On,M=R[E0Qo;RmQ:@HjhqYV#qnP^gs?S9lpOcNQJqG=-Wo)1]rPne^:9QN*9PM-diWN=?9>iW]dX&<YU]?9n>RABb1@TJVeuK->]0V7g&^2dX^'(N]8->c*XQ%WbkUV")uk#<`?=O$JA=7L%6,IdlHTJEO$pQRfc>c)bj,Zn[UohB)6^P^Z**2-$/N5P3^#EJHf5b!?9%m5hjkQ#O]JT>N=jjIoW^EnGDfu^_McG,Be.'6R@.TQf;fh=S4M,!Q`].WhsK22>`ND8]eYj%Y8,9b2^rBb!a),XZa],$0:tVN,fI*d"p9PZ]L5Fc5S:nL9LLBjbOtYs4&?B.M)c6*[DF`O+_9tg*?g@VVN`#VW#5N23G^D*Wmc-4$Jr^PKOp<$=:**a)n2V63B!&"'Le4PIsLu6=j[;_-E?"[r8S%Bm#9)j2:KI@Hr#\7fZsH6p^a^j%^=sm%8,cOC*(9]/V-sQ>rk[(D&NJ7[+`ooJAD5*>&sh:_JCI$Hm'mpc^-K&DAnDB<Z3]MKofsLl.WT[4VEL#$,Xdq0TRa8q_<sk2mhF\[T5'M@\^(bR,JEbptj,FQ9s#O^&h<$3B!Kk?!90lnKfYTo7@kIitTGU>&Gn_(C[ZMinGd*mLuX(B%<a?\V6mqe)SG!I__fT*m;n\d#t7TO0+pb.ufS<,tB=@TOJR*UY/g*dniT4<[(<\B^tda9EnG9,7=*nJ3k&f!JO(sI14?(G*NoijX@8&*6Pip+q0h`)UuN%3C[jTX.3Y*Js3Op>hp6W:fLuS?l>rLUlHlF@FZoFZsGD,*r!hLEKYJC+-u4;)pVoVkMcqM>aqKGgl1YaG]G^Q,[o?1F^M%7H5<plFM*Ss#Y_^]:_blUfHD]mp0cL9U@STM,;eO)>aGC?^J3ZX\;ER]QG\ZBh0<-[*8:q3R3,4)_GY8T\%7f/Z#P-g@(C!9;HK_<jh+\:'B\d]H9A)G&S^.Dm9n]6R.I.jPRhNJ;m"d7oLqOsYaCmR(mbqZ[_eX/Vm4d)+dP)2`Zht*PF,P[X:=FKg5@9l`4<[A[h]4>qDLV\K98\'2iJMG8k]u3FC%d\&h>:O$rLNphh7OTbkbLPh;$;&Kf(PqlOGCcA!&mi9S<(#49l%u(greoAu*\rqsPf=`&-SLak"L?6j@Ge^Na#-pF.G</SbRQG(<G/<pE^]fX[RQ5+\<RR@sf@E))n7%u#V_dZS'$$bHfr^@?drRi%Zn(8$'hl(9eNYN%H,3T(qM\!H6d>]e5bkru4]R\E6)%8g%fYcb,JQu6(P->Jdp#5Q:RZ7O^J?>bN.-[u.8)cE=~>endstream
+endobj
+xref
+0 60
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000519 00000 n 
+0000000710 00000 n 
+0000000902 00000 n 
+0000001090 00000 n 
+0000001276 00000 n 
+0000001462 00000 n 
+0000001655 00000 n 
+0000001845 00000 n 
+0000002044 00000 n 
+0000002252 00000 n 
+0000002460 00000 n 
+0000002640 00000 n 
+0000002820 00000 n 
+0000003003 00000 n 
+0000003181 00000 n 
+0000003367 00000 n 
+0000003550 00000 n 
+0000003758 00000 n 
+0000003966 00000 n 
+0000004314 00000 n 
+0000004496 00000 n 
+0000004685 00000 n 
+0000004880 00000 n 
+0000005063 00000 n 
+0000005246 00000 n 
+0000005432 00000 n 
+0000005619 00000 n 
+0000005806 00000 n 
+0000005997 00000 n 
+0000006185 00000 n 
+0000006362 00000 n 
+0000006551 00000 n 
+0000006736 00000 n 
+0000006923 00000 n 
+0000007116 00000 n 
+0000007303 00000 n 
+0000007498 00000 n 
+0000007691 00000 n 
+0000007895 00000 n 
+0000008082 00000 n 
+0000008273 00000 n 
+0000008456 00000 n 
+0000008643 00000 n 
+0000009028 00000 n 
+0000009236 00000 n 
+0000009444 00000 n 
+0000009642 00000 n 
+0000009853 00000 n 
+0000010064 00000 n 
+0000010317 00000 n 
+0000010387 00000 n 
+0000010719 00000 n 
+0000010794 00000 n 
+0000013932 00000 n 
+0000016911 00000 n 
+trailer
+<<
+/ID 
+[<609532c30772052c3a60a2bad19e4530><609532c30772052c3a60a2bad19e4530>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 55 0 R
+/Root 54 0 R
+/Size 60
+>>
+startxref
+19119
+%%EOF

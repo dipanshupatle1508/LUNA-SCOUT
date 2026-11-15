@@ -1,0 +1,68 @@
+[
+  {
+    "id": "shackleton",
+    "name": "Shackleton region",
+    "lat": -89.67,
+    "lon": 129.78,
+    "status": "reference",
+    "note": "IAU/USGS feature centre of Shackleton crater (LOLA control network). Regional marker, not a historical touchdown or a selected safe landing point.",
+    "source": "https://planetarynames.wr.usgs.gov/Feature/5450",
+    "kind": "region",
+    "short_name": "Shackleton region"
+  },
+  {
+    "id": "connecting-ridge",
+    "name": "Connecting Ridge region",
+    "lat": -89.489,
+    "lon": -137.8675,
+    "status": "reference",
+    "note": "NASA published Shackleton Connecting Ridge SCR2 candidate coordinate from its 2021 selection record; not the eventual IM-2 touchdown.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2024/11/mthornblom-im2-final-tagged.pdf",
+    "kind": "region",
+    "short_name": "Connecting Ridge region"
+  },
+  {
+    "id": "malapert",
+    "name": "Malapert massif region",
+    "lat": -85.98,
+    "lon": -1.67,
+    "status": "reference",
+    "note": "IAU/USGS centre of Mons Malapert, also called Malapert massif. Regional marker, not the IM-1 touchdown.",
+    "source": "https://planetarynames.wr.usgs.gov/Feature/16338",
+    "kind": "region",
+    "short_name": "Malapert massif region"
+  },
+  {
+    "id": "mons-mouton",
+    "name": "Mons Mouton region",
+    "lat": -84.6,
+    "lon": 31.0,
+    "status": "reference",
+    "note": "IAU/USGS centre of Mons Mouton. Regional marker, not a historical touchdown.",
+    "source": "https://planetarynames.wr.usgs.gov/Feature/16070",
+    "kind": "region",
+    "short_name": "Mons Mouton region"
+  },
+  {
+    "id": "chandrayaan3",
+    "name": "Chandrayaan-3 · Shiv Shakti",
+    "lat": -69.373,
+    "lon": 32.319,
+    "status": "landed",
+    "note": "Rounded published touchdown coordinate. Southern high latitude, not the geographic south pole. Coarser 240 m terrain.",
+    "kind": "touchdown",
+    "source": "https://www.nasa.gov/wp-content/uploads/2026/02/42-240a.pdf",
+    "short_name": "Chandrayaan-3 · Shiv Shakti"
+  },
+  {
+    "id": "apollo11",
+    "name": "Apollo 11 · Tranquility Base",
+    "lat": 0.67416,
+    "lon": 23.47314,
+    "status": "landed",
+    "note": "Historical near-equatorial comparison. Global LOLA terrain is approximately 1.9 km/pixel, unsuitable for local landing hazards.",
+    "kind": "touchdown",
+    "source": "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
+    "short_name": "Apollo 11 · Tranquility Base"
+  }
+]

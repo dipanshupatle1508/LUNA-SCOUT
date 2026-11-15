@@ -1,0 +1,27 @@
+LUNA SCOUT - COMPLETE UPDATED PROJECT
+
+This is the full project, with all previous updates already included.
+You do not need an earlier ZIP or a separate data folder.
+
+1. Extract this ZIP completely into a NEW folder.
+2. Open the extracted luna-scout folder.
+3. Install 64-bit Python 3.11 or 3.12 if needed.
+4. On Windows, double-click start_windows.bat.
+5. Open http://127.0.0.1:8000 in Chrome, Edge or Firefox.
+6. Keep the terminal open while using the application.
+
+The first dependency installation needs an internet connection.
+
+FRONTEND: frontend/
+BACKEND: backend/
+ELEVATION DATA: data/terrain/
+ASTRONOMY KERNELS: data/kernels/
+DOCUMENTATION: docs/
+TESTS: tests/
+ARCHITECTURE GUIDE: docs/PROJECT_ARCHITECTURE.md
+
+Open Safety ranking for date-specific terrain comparisons and the polar survey.
+Open Mission planner for timelines and side-by-side scenarios.
+Select a point on the Moon to enter spacecraft flight.
+
+See README.md for detailed setup, controls, features and troubleshooting.

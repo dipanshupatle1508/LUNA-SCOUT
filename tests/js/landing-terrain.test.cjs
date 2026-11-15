@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict');
+const THREE=require('../../frontend/vendor/three.min.js');
+global.window={};global.LunarFlight=require('../../frontend/js/flight-core.js');
+const fakeThree={...THREE,TextureLoader:class{load(url,onLoad,progress,onError){onError();}}};
+require('../../frontend/js/landing-terrain.js');
+const grid=extent=>({extent_m:extent,size:3,height_m:Array(9).fill(100)});
+const d={lat:-89.489,lon:-137.8675,ground_m:100,near:grid(4096),far:grid(80000)};
+const a=window.createLandingTerrain(fakeThree,d,71,true),b=window.createLandingTerrain(fakeThree,d,71,true);
+assert.equal(a.userData.height(0,0),0);
+assert.ok(Math.abs(a.userData.height(100,0)+10000/(2*LunarFlight.R))<1e-10);
+const rocks=a.children.filter(m=>m.userData.decorative);
+assert.equal(rocks.length,180);
+assert.deepEqual(rocks.map(m=>m.position.toArray()),b.children.filter(m=>m.userData.decorative).map(m=>m.position.toArray()));
+for(const rock of rocks){assert.ok(rock.position.length()>7);assert.ok(rock.scale.length()<1.5);}
+const [far,near,patch]=a.children;
+assert.ok(Math.abs(far.geometry.attributes.position.getY(0)+2*80000**2/(2*LunarFlight.R))<.001);
+assert.ok(near.geometry.index.count>0);assert.ok(patch.geometry.index.count>0);
+assert.equal(patch.userData.photoSurface,true);
+a.userData.dispose();b.userData.dispose();
+console.log('Landing terrain: survey heights, curvature, deterministic small rocks, texture flags and disposal passed.');
